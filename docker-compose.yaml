@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  dot-core-server:
+    image: dot-core-server:latest
+    container_name: dot-core-server
+    hostname: dot-core-server
+    build: .
+    environment:
+      SERVICE_NAME: dot-core-server
+    volumes:
+      - ./local/license/:/srv/dot-core-server/license
+      - ./local/logs/:/srv/dot-core-server/logs
+    ports:
+      - 8080:8080

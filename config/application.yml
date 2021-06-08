@@ -1,0 +1,21 @@
+# Spring properties
+# Add/override Spring Boot properties here if needed
+
+# DOT properties
+# Set/override DOT Core Server specific properties below
+innovatrics:
+  dot:
+    core:
+      http:
+        logging:
+          payload: false
+      iface:
+        solvers:
+          path: iface/solvers
+        license:
+          # License installed in system is used by default. Uncomment filepath below to specify custom location.
+          filepath: license/iengine.lic
+        min-face-size-ratio: 0.05
+        max-face-size-ratio: 0.35
+      liveness:
+        default-min-valid-segment-count: 4
