@@ -24,17 +24,8 @@ FROM openjdk:11-jre-slim
 # Set the working directory
 WORKDIR /srv/dot-core-server
 
-# Copy IFace shared object file
-COPY libiface.so.4.8.0 /srv/dot-core-server/iface/
-
-# Copy IFace solvers
-COPY solvers /srv/dot-core-server/iface/solvers
-
-# Copy the DOT Core Server JAR file
-COPY dot-core-server.jar /srv/dot-core-server
-
-# Copy the application configuration file
-COPY config/application.yml /srv/dot-core-server/
+# Copy files
+COPY . /srv/dot-core-server/
 
 # Install necessary libraries and create a link to the library previously copied to our workdir
 RUN apt-get update && apt-get install -y curl libusb-0.1 libgomp1 && ldconfig /srv/dot-core-server/iface/

@@ -65,3 +65,70 @@ Caused by: com.innovatrics.iface.IFaceException: Found license is not valid.
 	at com.innovatrics.dot.coreserver.iface.FaceHandlerHolder.initIFace(FaceHandlerHolder.java:131)
 	... 34 common frames omitted
 
+2021-06-08 19:15:02.158  INFO 7 --- [main] c.i.dot.coreserver.Application           : Starting Application on dot-core-server with PID 7 (/srv/dot-core-server/dot-core-server.jar started by root in /srv/dot-core-server)
+2021-06-08 19:15:02.160  INFO 7 --- [main] c.i.dot.coreserver.Application           : No active profile set, falling back to default profiles: default
+2021-06-08 19:15:02.189  WARN 7 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2021-06-08 19:15:04.007  INFO 7 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'configurationPropertiesValidator' of type [com.innovatrics.dot.coreserver.validator.IFaceConfigPropsValidator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-08 19:15:04.561  INFO 7 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-06-08 19:15:04.598  INFO 7 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-08 19:15:04.599  INFO 7 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-06-08 19:15:04.615  INFO 7 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+2021-06-08 19:15:04.697  INFO 7 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-08 19:15:04.698  INFO 7 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2480 ms
+2021-06-08 19:15:05.223  INFO 7 --- [main] o.c.s.w.s.ServerTracingAutoConfiguration : Creating FilterRegistrationBean bean with TracingFilter mapped to [], skip pattern is "/api-docs.*|/swagger.*|.*\.png|.*\.css|.*\.js|.*\.html|/favicon.ico|/hystrix.stream|/actuator/(health|health/.*|info|info/.*)"
+2021-06-08 19:15:05.271  INFO 7 --- [main] c.i.d.c.ApplicationConfiguration         : DOT Core Server version: 6.5.0
+2021-06-08 19:15:05.336 DEBUG 7 --- [main] c.i.d.c.filter.RequestLoggingFilter      : Filter 'requestLoggingFilter' configured for use
+2021-06-08 19:15:05.375  INFO 7 --- [main] c.i.d.c.iface.FaceHandlerHolder          : Initializing IFace with provided license: /srv/dot-core-server/license/iengine.lic
+2021-06-08 19:15:05.435  WARN 7 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'faceHandlerHolder': Invocation of init method failed; nested exception is java.lang.RuntimeException: Unable to init IFace.
+2021-06-08 19:15:05.440  INFO 7 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-06-08 19:15:05.458  INFO 7 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-06-08 19:15:05.463 ERROR 7 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'faceHandlerHolder': Invocation of init method failed; nested exception is java.lang.RuntimeException: Unable to init IFace.
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:139)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:414)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1754)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.innovatrics.dot.coreserver.Application.main(Application.java:14)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
+Caused by: java.lang.RuntimeException: Unable to init IFace.
+	at com.innovatrics.dot.coreserver.iface.FaceHandlerHolder.initIFace(FaceHandlerHolder.java:138)
+	at com.innovatrics.dot.coreserver.iface.FaceHandlerHolder.initFaceHandlerHolder(FaceHandlerHolder.java:37)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:363)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:307)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:136)
+	... 26 common frames omitted
+Caused by: com.innovatrics.iface.IFaceException: Found license is not valid.
+	at com.innovatrics.iface.IFaceException.check(IFaceException.java:37)
+	at com.innovatrics.iface.IFace.check(IFace.java:202)
+	at com.innovatrics.iface.IFace.initWithLicence(IFace.java:47)
+	at com.innovatrics.dot.coreserver.iface.FaceHandlerHolder.initIFace(FaceHandlerHolder.java:131)
+	... 34 common frames omitted
+
